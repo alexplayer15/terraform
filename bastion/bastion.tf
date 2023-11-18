@@ -18,10 +18,10 @@ resource "aws_eip" "bastion" {
   #count = var.create_bastion_host == true ? 1:0 
 }
 
-resource "null_resource" "configure_ssh" {
-  triggers = {
-    eip_id = aws_eip.bastion.id
-  }
+# resource "null_resource" "configure_ssh" {
+#   triggers = {
+#     eip_id = aws_eip.bastion.id
+#   }
 
   # provisioner "local-exec" {
   #   command = <<-EOT
